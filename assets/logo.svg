@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" fill="none">
+  <!-- Left elongated vertical oval -->
+  <ellipse cx="352" cy="500" rx="52" ry="200" fill="currentColor"/>
+  <!-- Right circle -->
+  <circle cx="560" cy="560" r="140" fill="currentColor"/>
+</svg>

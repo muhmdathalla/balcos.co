@@ -1,114 +1,114 @@
 /* ==========================================================================
    BALCOS.CO - Compound by Sebelas Coffee
-   Modern Flexible Theme Design System & Stylesheet
+   Modern Flexible Theme Design System & Stylesheet (Refined & Polished)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 /* --- THEME VARIABLES --- */
 :root, [data-theme="terracotta"] {
-  --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display: 'Syne', sans-serif;
+  --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Color Palette */
-  --color-primary: #D85A32;
-  --color-primary-hover: #BF4720;
-  --color-primary-soft: rgba(216, 90, 50, 0.12);
-  --color-primary-glow: rgba(216, 90, 50, 0.28);
+  /* Official Balcos Orange / Terracotta Palette */
+  --color-primary: #EA5434;
+  --color-primary-hover: #D43E1F;
+  --color-primary-soft: rgba(234, 84, 52, 0.10);
+  --color-primary-glow: rgba(234, 84, 52, 0.25);
   
-  --color-secondary: #2C2623;
+  --color-secondary: #1F2421;
   --color-accent: #E58E26;
-  --color-accent-badge: #FFECE5;
+  --color-accent-badge: #FFF0EB;
   
-  --bg-page: #FBF9F5;
+  --bg-page: #FAF8F5;
   --bg-surface: #FFFFFF;
   --bg-surface-elevated: #FFFFFF;
-  --bg-surface-translucent: rgba(255, 255, 255, 0.85);
-  --bg-dark-section: #1A1615;
-  --bg-muted: #F3EFEA;
+  --bg-surface-translucent: rgba(255, 255, 255, 0.90);
+  --bg-dark-section: #14171A;
+  --bg-muted: #F2EFE9;
   
-  --text-main: #1C1917;
-  --text-muted: #66615E;
-  --text-light: #948F8C;
+  --text-main: #181A1B;
+  --text-muted: #5E646A;
+  --text-light: #8C949D;
   --text-inverse: #FFFFFF;
   
-  --border-light: #EBE5DF;
-  --border-focus: #D85A32;
+  --border-light: #E7E3DC;
+  --border-focus: #EA5434;
   
-  --shadow-sm: 0 2px 8px rgba(28, 25, 23, 0.04);
-  --shadow-md: 0 8px 24px rgba(28, 25, 23, 0.08);
-  --shadow-lg: 0 16px 40px rgba(28, 25, 23, 0.12);
-  --shadow-primary: 0 8px 25px rgba(216, 90, 50, 0.25);
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.09);
+  --shadow-primary: 0 8px 25px rgba(234, 84, 52, 0.28);
   
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
-  --radius-xl: 32px;
+  --radius-xl: 28px;
   --radius-full: 9999px;
   
   --nav-height: 76px;
-  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Midnight Dark Compound */
 [data-theme="midnight"] {
-  --color-primary: #FF6B3D;
-  --color-primary-hover: #FF855D;
-  --color-primary-soft: rgba(255, 107, 61, 0.16);
-  --color-primary-glow: rgba(255, 107, 61, 0.35);
+  --color-primary: #FF5A36;
+  --color-primary-hover: #FF7354;
+  --color-primary-soft: rgba(255, 90, 54, 0.15);
+  --color-primary-glow: rgba(255, 90, 54, 0.35);
   
-  --color-secondary: #E8E5E2;
+  --color-secondary: #E4E7EB;
   --color-accent: #FFA94D;
-  --color-accent-badge: #2A211D;
+  --color-accent-badge: #261D1A;
   
-  --bg-page: #0E1114;
-  --bg-surface: #171B20;
-  --bg-surface-elevated: #21262D;
-  --bg-surface-translucent: rgba(23, 27, 32, 0.88);
-  --bg-dark-section: #080A0C;
-  --bg-muted: #1F242B;
+  --bg-page: #0C0E12;
+  --bg-surface: #15181E;
+  --bg-surface-elevated: #1D212A;
+  --bg-surface-translucent: rgba(21, 24, 30, 0.92);
+  --bg-dark-section: #08090C;
+  --bg-muted: #1B2028;
   
-  --text-main: #F4F6F8;
-  --text-muted: #9BA3AF;
-  --text-light: #6C7684;
-  --text-inverse: #0E1114;
+  --text-main: #F3F5F7;
+  --text-muted: #9AA2AC;
+  --text-light: #6A7380;
+  --text-inverse: #0C0E12;
   
-  --border-light: #2A303A;
-  --border-focus: #FF6B3D;
+  --border-light: #262B35;
+  --border-focus: #FF5A36;
   
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.65);
-  --shadow-primary: 0 8px 25px rgba(255, 107, 61, 0.3);
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.7);
+  --shadow-primary: 0 8px 25px rgba(255, 90, 54, 0.32);
 }
 
 /* Oat Matcha Organic */
 [data-theme="matcha"] {
-  --color-primary: #2E6F40;
-  --color-primary-hover: #225330;
-  --color-primary-soft: rgba(46, 111, 64, 0.12);
-  --color-primary-glow: rgba(46, 111, 64, 0.28);
+  --color-primary: #2C6E49;
+  --color-primary-hover: #205337;
+  --color-primary-soft: rgba(44, 110, 73, 0.12);
+  --color-primary-glow: rgba(44, 110, 73, 0.28);
   
-  --color-secondary: #1E2D22;
+  --color-secondary: #1C2820;
   --color-accent: #8EAA59;
   --color-accent-badge: #EBF2EC;
   
   --bg-page: #F5F7F4;
   --bg-surface: #FFFFFF;
   --bg-surface-elevated: #FFFFFF;
-  --bg-surface-translucent: rgba(255, 255, 255, 0.88);
-  --bg-dark-section: #142018;
-  --bg-muted: #E8ECE6;
+  --bg-surface-translucent: rgba(255, 255, 255, 0.90);
+  --bg-dark-section: #121E16;
+  --bg-muted: #E7EDE6;
   
   --text-main: #18221B;
-  --text-muted: #5B685E;
-  --text-light: #87948B;
+  --text-muted: #5A695D;
+  --text-light: #869689;
   --text-inverse: #FFFFFF;
   
-  --border-light: #DCE3DA;
-  --border-focus: #2E6F40;
+  --border-light: #DCE5DB;
+  --border-focus: #2C6E49;
   
-  --shadow-primary: 0 8px 25px rgba(46, 111, 64, 0.22);
+  --shadow-primary: 0 8px 25px rgba(44, 110, 73, 0.22);
 }
 
 /* Neon Twilight Hub */
@@ -125,7 +125,7 @@
   --bg-page: #0B0D17;
   --bg-surface: #141726;
   --bg-surface-elevated: #1F2338;
-  --bg-surface-translucent: rgba(20, 23, 38, 0.88);
+  --bg-surface-translucent: rgba(20, 23, 38, 0.92);
   --bg-dark-section: #06070D;
   --bg-muted: #1D2136;
   
@@ -151,18 +151,19 @@ body {
   font-family: var(--font-primary);
   background-color: var(--bg-page);
   color: var(--text-main);
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, .font-display {
+h1, h2, h3, h4, h5, h6, .font-display {
   font-family: var(--font-display);
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  letter-spacing: -0.015em;
   color: var(--text-main);
+  line-height: 1.25;
 }
 
 a {
@@ -180,7 +181,7 @@ a:hover {
   color: #FFFFFF;
   font-size: 0.82rem;
   font-weight: 600;
-  padding: 6px 0;
+  padding: 7px 0;
   position: relative;
   z-index: 1050;
   overflow: hidden;
@@ -217,13 +218,13 @@ a:hover {
   z-index: 1030;
   height: var(--nav-height);
   background: var(--bg-surface-translucent);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border-light);
   transition: var(--transition-smooth);
 }
 .balcos-navbar.scrolled {
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   height: 68px;
 }
 .navbar-brand-logo {
@@ -231,36 +232,35 @@ a:hover {
   align-items: center;
   gap: 12px;
 }
-.brand-mark {
-  width: 42px;
-  height: 42px;
-  background: var(--color-primary);
-  color: #FFF;
-  border-radius: 12px;
+.brand-logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: var(--transition-smooth);
+}
+.brand-mark-svg {
+  width: 36px;
+  height: 36px;
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.4rem;
-  box-shadow: var(--shadow-primary);
 }
 .brand-text {
-  line-height: 1.1;
+  line-height: 1.15;
 }
 .brand-text .title {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.22rem;
   font-weight: 800;
   color: var(--text-main);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 .brand-text .subtitle {
   font-size: 0.72rem;
   font-weight: 600;
   color: var(--color-primary);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
 }
 
 .nav-link {
@@ -311,7 +311,7 @@ a:hover {
   color: #FFF !important;
   font-weight: 700;
   font-size: 0.88rem;
-  padding: 8px 18px;
+  padding: 9px 20px;
   border-radius: var(--radius-full);
   display: inline-flex;
   align-items: center;
@@ -328,9 +328,9 @@ a:hover {
 /* --- HERO SECTION --- */
 .hero-section {
   position: relative;
-  padding: 50px 0 70px;
-  background: radial-gradient(circle at 80% 20%, var(--color-primary-soft) 0%, transparent 50%),
-              radial-gradient(circle at 20% 80%, rgba(229, 142, 38, 0.08) 0%, transparent 40%);
+  padding: 55px 0 75px;
+  background: radial-gradient(circle at 85% 15%, var(--color-primary-soft) 0%, transparent 45%),
+              radial-gradient(circle at 15% 85%, rgba(229, 142, 38, 0.06) 0%, transparent 35%);
 }
 .hero-badge-pill {
   display: inline-flex;
@@ -347,9 +347,11 @@ a:hover {
   margin-bottom: 20px;
 }
 .hero-title {
-  font-size: clamp(2.4rem, 5vw, 4.2rem);
-  line-height: 1.08;
+  font-size: clamp(2.3rem, 4.5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.15;
   margin-bottom: 20px;
+  letter-spacing: -0.02em;
 }
 .hero-title .highlight {
   color: var(--color-primary);
@@ -360,18 +362,19 @@ a:hover {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 4px;
+  bottom: 6px;
   width: 100%;
-  height: 8px;
+  height: 10px;
   background: var(--color-primary-soft);
   z-index: -1;
   border-radius: 4px;
 }
 .hero-lead {
-  font-size: 1.12rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
-  max-width: 540px;
-  margin-bottom: 30px;
+  max-width: 530px;
+  margin-bottom: 32px;
+  line-height: 1.6;
 }
 .hero-cta-group {
   display: flex;
@@ -383,8 +386,8 @@ a:hover {
   background: var(--color-primary);
   color: #FFF;
   font-weight: 700;
-  font-size: 1rem;
-  padding: 14px 28px;
+  font-size: 0.96rem;
+  padding: 13px 28px;
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-primary);
   display: inline-flex;
@@ -403,8 +406,8 @@ a:hover {
   color: var(--text-main);
   border: 1px solid var(--border-light);
   font-weight: 700;
-  font-size: 1rem;
-  padding: 14px 24px;
+  font-size: 0.96rem;
+  padding: 13px 24px;
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-sm);
   display: inline-flex;
@@ -438,7 +441,7 @@ a:hover {
 .hero-proof-text {
   font-size: 0.85rem;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
 /* Hero Media Showcase Card */
@@ -465,7 +468,7 @@ a:hover {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
-  padding: 16px;
+  padding: 16px 20px;
   box-shadow: var(--shadow-md);
 }
 .badge-24h {
@@ -480,7 +483,7 @@ a:hover {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.70);
   color: #FFF;
   padding: 8px 16px;
   border-radius: var(--radius-full);
@@ -566,11 +569,11 @@ a:hover {
   transform: translateY(-4px);
 }
 .story-avatar-ring {
-  width: 76px;
-  height: 76px;
+  width: 74px;
+  height: 74px;
   border-radius: 50%;
   padding: 3px;
-  background: linear-gradient(45deg, #F58529, #D85A32, #DD2A7B, #8134AF);
+  background: linear-gradient(45deg, #F58529, #EA5434, #DD2A7B, #8134AF);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -613,7 +616,7 @@ a:hover {
   background: var(--bg-surface);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 26px;
   height: 100%;
   box-shadow: var(--shadow-sm);
   transition: var(--transition-smooth);
@@ -632,7 +635,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   margin-bottom: 16px;
 }
 .pillar-title {
@@ -644,6 +647,7 @@ a:hover {
   font-size: 0.88rem;
   color: var(--text-muted);
   margin-bottom: 0;
+  line-height: 1.6;
 }
 
 /* --- MENU SECTION --- */
@@ -658,12 +662,13 @@ a:hover {
   font-weight: 700;
   color: var(--color-primary);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   display: inline-block;
   margin-bottom: 8px;
 }
 .section-title {
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  font-weight: 800;
   margin-bottom: 12px;
 }
 .section-subtitle {
@@ -787,8 +792,8 @@ a:hover {
   gap: 6px;
 }
 .menu-desc {
-  font-size: 0.82rem;
-  line-height: 1.4;
+  font-size: 0.84rem;
+  line-height: 1.5;
   margin-bottom: 12px;
 }
 .dietary-tags-row {
@@ -805,9 +810,8 @@ a:hover {
   border-radius: var(--radius-full);
 }
 .menu-price-text {
-  font-size: 1.1rem;
+  font-size: 1.12rem;
   font-weight: 800;
-  font-family: var(--font-display);
   color: var(--color-primary);
 }
 .add-cart-btn {
@@ -884,7 +888,7 @@ a:hover {
   background: var(--bg-dark-section);
   color: #FFF;
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 26px;
 }
 .booking-summary-box h5 {
   color: #FFF;
@@ -893,12 +897,11 @@ a:hover {
   font-size: 1.6rem;
   font-weight: 800;
   color: var(--color-primary);
-  font-family: var(--font-display);
 }
 
 /* --- EVENT SHOWCASE (FESMO 2026 & WORKSHOPS) --- */
 .event-showcase-section {
-  padding: 70px 0;
+  padding: 75px 0;
   background: var(--bg-dark-section);
   color: #FFF;
 }
@@ -1279,7 +1282,7 @@ a:hover {
 
 @media (max-width: 576px) {
   :root { --nav-height: 66px; }
-  .hero-title { font-size: 2.1rem; }
+  .hero-title { font-size: 2rem; }
   .hero-cta-group { flex-direction: column; }
   .btn-primary-hero, .btn-secondary-hero { width: 100%; justify-content: center; }
   .booking-card-main { padding: 20px; }
