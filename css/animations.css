@@ -1,26 +1,21 @@
 /* ==========================================================================
-   BALCOS.CO - Micro-Interactions & Animation Styles
+   BALCOS.CO - iOS Liquid Glass Animations & Micro-Interactions
    ========================================================================== */
 
 /* Keyframe animations */
 @keyframes floatSlow {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-@keyframes spinSlow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  50% { transform: translateY(-6px); }
 }
 
 @keyframes pulseGlow {
-  0%, 100% { opacity: 0.8; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
 }
 
-@keyframes waveBar {
-  0%, 100% { height: 4px; }
-  50% { height: 16px; }
+@keyframes liquidShine {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  100% { transform: translateX(200%) rotate(25deg); }
 }
 
 .animate-float {
@@ -32,6 +27,25 @@
   animation: pulseGlow 1.8s infinite;
 }
 
+/* Tactile Active Feedback (iOS Feel) */
+.btn:active, .space-type-btn:active, .menu-filter-btn:active, .mobile-nav-item:active {
+  transform: scale(0.96) !important;
+  transition: transform 0.1s ease !important;
+}
+
+/* Glass Card Specular Light Sheen */
+.liquid-glass-card::after, .pillar-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, transparent 100%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
 /* Story Ring Shimmer */
 .story-avatar-ring::before {
   content: '';
@@ -40,7 +54,7 @@
   border-radius: 50%;
   background: inherit;
   filter: blur(4px);
-  opacity: 0.5;
+  opacity: 0.45;
   z-index: -1;
   transition: opacity 0.3s ease;
 }
@@ -49,27 +63,19 @@
   opacity: 0.9;
 }
 
-/* Hover Lift Effect */
-.hover-lift {
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
-}
-.hover-lift:hover {
-  transform: translateY(-4px);
-}
-
-/* Custom Scrollbar */
+/* Custom Clean Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-page);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border-light);
-  border-radius: 4px;
+  background: rgba(150, 150, 150, 0.25);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
