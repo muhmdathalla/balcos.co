@@ -33,7 +33,7 @@
       <div class="ticker-wrap">
         <div class="ticker-item">
           <span class="pulse-dot"></span>
-          <span><strong>BUKA 24 JAM SETIAP HARI</strong> · Balcos Compound Nologaten, Sleman</span>
+          <span><strong>BUKA 24 JAM</strong> · Balcos Compound Nologaten, Sleman</span>
         </div>
         <div class="ticker-item d-none d-md-flex align-items-center gap-3">
           <span><i class="bi bi-heart-fill text-danger me-1"></i> Pet Allowed 🐶🐱</span>
@@ -44,7 +44,7 @@
     </div>
   </div>
 
-  <!-- 2. NAVBAR -->
+  <!-- 2. NAVBAR (Desktop + Mobile Header) -->
   <nav class="navbar navbar-expand-lg balcos-navbar">
     <div class="container">
       <a class="navbar-brand navbar-brand-logo" href="#">
@@ -55,17 +55,19 @@
         </div>
       </a>
 
+      <!-- Mobile Controls (Cart & Hamburger) -->
       <div class="d-flex align-items-center gap-2 d-lg-none">
-        <button class="btn btn-outline-secondary btn-sm cart-drawer-toggle position-relative">
+        <button class="btn btn-outline-secondary btn-sm cart-drawer-toggle position-relative rounded-circle p-2" style="width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center;">
           <i class="bi bi-bag"></i>
           <span class="badge bg-danger position-absolute top-0 start-100 translate-middle rounded-pill cart-count-badge" style="display:none;">0</span>
         </button>
-        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
-          <i class="bi bi-list fs-2"></i>
+        <button class="btn btn-outline-secondary btn-sm rounded-circle p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas" style="width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center;">
+          <i class="bi bi-list fs-5"></i>
         </button>
       </div>
 
-      <div class="collapse navbar-collapse" id="navbarMain">
+      <!-- Desktop Nav Links -->
+      <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarMain">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="#hero">Beranda</a></li>
           <li class="nav-item"><a class="nav-link" href="#menu">Menu & Order</a></li>
@@ -93,7 +95,7 @@
           </div>
 
           <!-- Cart Button -->
-          <button class="btn btn-outline-secondary cart-drawer-toggle position-relative d-none d-lg-inline-flex align-items-center gap-2">
+          <button class="btn btn-outline-secondary cart-drawer-toggle position-relative d-inline-flex align-items-center gap-2">
             <i class="bi bi-bag-fill text-primary"></i>
             <span>Keranjang</span>
             <span class="badge bg-primary text-white cart-count-badge" style="display:none;">0</span>
@@ -108,10 +110,70 @@
     </div>
   </nav>
 
+  <!-- MOBILE OFFCANVAS DRAWER (iOS Frosted Glass Sheet) -->
+  <div class="offcanvas offcanvas-end mobile-offcanvas-drawer" tabindex="-1" id="mobileNavOffcanvas">
+    <div class="offcanvas-header border-bottom">
+      <div class="d-flex align-items-center gap-2">
+        <img src="assets/balcos-logo.png" alt="Balcos" style="width:32px; height:32px; object-fit:contain;">
+        <div>
+          <h6 class="mb-0 fw-bold">balcos.co</h6>
+          <small class="text-muted" style="font-size:0.7rem;">Compound by Sebelas Coffee</small>
+        </div>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body d-flex flex-column justify-content-between p-4">
+      <div class="mobile-nav-links-list">
+        <a href="#hero" class="mobile-drawer-link" data-bs-dismiss="offcanvas">
+          <i class="bi bi-house-door-fill text-primary me-3"></i> Beranda
+        </a>
+        <a href="#menu" class="mobile-drawer-link" data-bs-dismiss="offcanvas">
+          <i class="bi bi-cup-hot-fill text-primary me-3"></i> Menu & Order Online
+        </a>
+        <a href="#space" class="mobile-drawer-link" data-bs-dismiss="offcanvas">
+          <i class="bi bi-display text-primary me-3"></i> VIP Meeting Room
+        </a>
+        <a href="#events" class="mobile-drawer-link" data-bs-dismiss="offcanvas">
+          <i class="bi bi-music-note-beamed text-primary me-3"></i> Event & Komunitas
+        </a>
+        <a href="#reviews" class="mobile-drawer-link" data-bs-dismiss="offcanvas">
+          <i class="bi bi-star-fill text-warning me-3"></i> Ulasan Google Maps
+        </a>
+        <a href="#location" class="mobile-drawer-link" data-bs-dismiss="offcanvas">
+          <i class="bi bi-geo-alt-fill text-danger me-3"></i> Lokasi & Petunjuk Arah
+        </a>
+      </div>
+
+      <div class="mobile-drawer-footer border-top pt-3 mt-4">
+        <!-- Mobile Theme Switcher with Labels -->
+        <label class="form-label small fw-bold text-muted mb-2">Tema Tampilan:</label>
+        <div class="d-flex justify-content-between gap-1 mb-3">
+          <button class="btn btn-sm btn-outline-secondary flex-grow-1 theme-toggle-btn active" data-theme="terracotta">
+            <i class="bi bi-sun-fill text-warning"></i> Sun
+          </button>
+          <button class="btn btn-sm btn-outline-secondary flex-grow-1 theme-toggle-btn" data-theme="midnight">
+            <i class="bi bi-moon-stars-fill"></i> Dark
+          </button>
+          <button class="btn btn-sm btn-outline-secondary flex-grow-1 theme-toggle-btn" data-theme="matcha">
+            <i class="bi bi-flower1 text-success"></i> Matcha
+          </button>
+          <button class="btn btn-sm btn-outline-secondary flex-grow-1 theme-toggle-btn" data-theme="neon">
+            <i class="bi bi-lightning-charge-fill text-primary"></i> Neon
+          </button>
+        </div>
+
+        <a href="https://wa.me/6285117439369" target="_blank" class="btn btn-primary w-100 rounded-pill py-2 fw-bold">
+          <i class="bi bi-whatsapp me-2"></i> WhatsApp Hotline 24 Jam
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- 3. HERO SECTION -->
   <section class="hero-section" id="hero">
     <div class="container">
-      <div class="row align-items-center gy-5">
+      <div class="row align-items-center gy-4">
         <div class="col-lg-6">
           <div class="hero-badge-pill">
             <span class="pulse-dot"></span>
@@ -150,7 +212,7 @@
                 <i class="bi bi-star-half"></i>
                 <span class="text-dark fw-bold ms-1">4.5 / 5.0</span>
               </div>
-              <span class="text-muted small">Berdasarkan <strong>243+ ulasan terverifikasi Google Maps</strong></span>
+              <span class="text-muted small">Berdasarkan <strong>243+ ulasan Google Maps</strong></span>
             </div>
           </div>
         </div>
@@ -164,7 +226,7 @@
             </div>
 
             <div class="hero-floating-glass-card">
-              <div class="d-flex justify-content-between align-items-center mb-2">
+              <div class="d-flex justify-content-between align-items-center mb-1">
                 <div class="d-flex align-items-center gap-2">
                   <span class="badge-24h">OPEN 24 HOURS</span>
                   <span class="fw-bold small">Sebelas Coffee Compound</span>
@@ -172,7 +234,7 @@
                 <span class="text-primary fw-bold small">Rp 1k – 25k</span>
               </div>
               <p class="mb-0 small text-muted">
-                Indoor AC Sejuk · Stop Kontak Tiap Meja · Outdoor Garden · Meeting Room VIP · Pet Allowed
+                Indoor AC Sejuk · Stop Kontak Tiap Meja · Meeting Room VIP · Pet Allowed
               </p>
             </div>
           </div>
@@ -190,10 +252,10 @@
           <span><strong>Buka 24 Jam:</strong> Memuat status keramaian...</span>
         </div>
 
-        <div class="d-flex align-items-center gap-3">
+        <div class="d-flex align-items-center gap-2">
           <span class="badge bg-secondary text-white" id="live-time-display">--:-- WIB</span>
           <button class="ambient-btn" id="ambient-sound-toggle">
-            <i class="bi bi-volume-mute"></i> <span>Play Café Lofi</span>
+            <i class="bi bi-volume-mute"></i> <span>Café Lofi</span>
           </button>
         </div>
       </div>
@@ -207,7 +269,7 @@
         <h6 class="text-uppercase fw-bold text-muted small mb-0">
           <i class="bi bi-instagram text-danger me-1"></i> Balcos.co Highlights
         </h6>
-        <span class="text-muted small">Ketuk untuk melihat detail cerita</span>
+        <span class="text-muted small" style="font-size:0.75rem;">Ketuk untuk detail</span>
       </div>
 
       <div class="stories-scroll-wrapper">
@@ -221,15 +283,15 @@
   <!-- 6. KEY PILLARS / FACILITIES -->
   <section class="pillars-section">
     <div class="container">
-      <div class="row text-center mb-5">
+      <div class="row text-center mb-4">
         <div class="col-lg-8 mx-auto">
           <span class="section-tag">Compound Facilities</span>
-          <h2 class="section-title">Semua yang Kamu Butuhkan untuk Produktif & Santai</h2>
-          <p class="section-subtitle mx-auto">Dirancang khusus untuk mahasiswa, remote worker, kreator konten, dan komunitas di Yogyakarta.</p>
+          <h2 class="section-title">Semua Fasilitas untuk Produktif & Santai</h2>
+          <p class="section-subtitle mx-auto">Dirancang khusus untuk mahasiswa, remote worker, dan komunitas kreatif di Yogyakarta.</p>
         </div>
       </div>
 
-      <div class="row g-4">
+      <div class="row g-3 g-md-4">
         <div class="col-md-6 col-lg-4">
           <div class="pillar-card">
             <div class="pillar-icon-box"><i class="bi bi-clock-history"></i></div>
@@ -242,7 +304,7 @@
           <div class="pillar-card">
             <div class="pillar-icon-box"><i class="bi bi-heart-pulse"></i></div>
             <h5 class="pillar-title">Pet Friendly 🐶🐱</h5>
-            <p class="pillar-text">Bawa anabul kesayanganmu! Area outdoor dan semi-outdoor ramah hewan peliharaan sehingga kamu bisa nongkrong tanpa khawatir.</p>
+            <p class="pillar-text">Bawa anabul kesayanganmu! Area outdoor dan semi-outdoor ramah hewan peliharaan sehingga kamu bisa nongkrong santai.</p>
           </div>
         </div>
 
@@ -250,7 +312,7 @@
           <div class="pillar-card">
             <div class="pillar-icon-box"><i class="bi bi-display"></i></div>
             <h5 class="pillar-title">Meeting Room VIP</h5>
-            <p class="pillar-text">Ruangan privat ber-AC dengan Smart TV 55", glassboard, dan colokan berlimpah. Pas untuk presentasi bisnis atau rapat tim.</p>
+            <p class="pillar-text">Ruangan privat ber-AC dengan Smart TV 55", glassboard, dan colokan berlimpah. Pas untuk presentasi atau rapat tim.</p>
           </div>
         </div>
 
@@ -258,7 +320,7 @@
           <div class="pillar-card">
             <div class="pillar-icon-box"><i class="bi bi-cup-straw"></i></div>
             <h5 class="pillar-title">Specialty Sebelas Coffee</h5>
-            <p class="pillar-text">Racikan kopi andalan dari Sebelas Coffee: Es Kopi Susu Sebelas, Basic Latte, V60 single origin, hingga signature mocktail segar.</p>
+            <p class="pillar-text">Racikan kopi andalan dari Sebelas Coffee: Es Kopi Susu Sebelas, Basic Latte, V60 single origin, hingga signature mocktail.</p>
           </div>
         </div>
 
@@ -266,7 +328,7 @@
           <div class="pillar-card">
             <div class="pillar-icon-box"><i class="bi bi-wifi"></i></div>
             <h5 class="pillar-title">Wi-Fi Kencang & Colokan</h5>
-            <p class="pillar-text">Koneksi internet stabil berkecepatan tinggi dengan power socket di hampir setiap meja untuk menunjang produktivitas kerjamu.</p>
+            <p class="pillar-text">Koneksi internet stabil berkecepatan tinggi dengan power socket di hampir setiap meja untuk menunjang produktivitasmu.</p>
           </div>
         </div>
 
@@ -274,7 +336,7 @@
           <div class="pillar-card">
             <div class="pillar-icon-box"><i class="bi bi-egg-fried"></i></div>
             <h5 class="pillar-title">Comfort Kitchen & Buryam</h5>
-            <p class="pillar-text">Legenda Bubur Ayam Balcos 24 jam, Rice Box Ayam Cabe Garam, Dori Sambal Matah, hingga artisan croissant hangat.</p>
+            <p class="pillar-text">Legenda Bubur Ayam Balcos 24 jam, Rice Box Ayam Cabe Garam, Dori Sambal Matah, hingga artisan pastry hangat.</p>
           </div>
         </div>
       </div>
@@ -284,7 +346,7 @@
   <!-- 7. INTERACTIVE MENU SECTION -->
   <section class="menu-section" id="menu">
     <div class="container">
-      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 gap-3">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-3 gap-3">
         <div>
           <span class="section-tag">Taste & Refreshment</span>
           <h2 class="section-title mb-1">Daftar Menu Pilihan Balcos</h2>
@@ -292,7 +354,7 @@
         </div>
 
         <!-- Search Box -->
-        <div class="menu-search-box" style="min-width: 260px;">
+        <div class="menu-search-box" style="min-width: 240px;">
           <i class="bi bi-search"></i>
           <input type="text" id="menu-search-input" placeholder="Cari kopi, latte, buryam...">
         </div>
@@ -300,17 +362,17 @@
 
       <!-- Filter Buttons -->
       <div class="menu-filter-bar mb-4">
-        <button class="menu-filter-btn active" data-category="all"><i class="bi bi-grid-fill me-1"></i> Semua Menu</button>
+        <button class="menu-filter-btn active" data-category="all"><i class="bi bi-grid-fill me-1"></i> Semua</button>
         <button class="menu-filter-btn" data-category="coffee"><i class="bi bi-cup-hot-fill me-1"></i> Kopi & Espresso</button>
-        <button class="menu-filter-btn" data-category="mocktail"><i class="bi bi-tropical-storm me-1"></i> Signature Mocktail</button>
+        <button class="menu-filter-btn" data-category="mocktail"><i class="bi bi-tropical-storm me-1"></i> Mocktail</button>
         <button class="menu-filter-btn" data-category="non-coffee"><i class="bi bi-flower2 me-1"></i> Matcha & Tea</button>
-        <button class="menu-filter-btn" data-category="meals"><i class="bi bi-egg-fill me-1"></i> Balcos Meals & Buryam</button>
-        <button class="menu-filter-btn" data-category="bites"><i class="bi bi-basket-fill me-1"></i> Snack & Bites</button>
-        <button class="menu-filter-btn" data-category="pastry"><i class="bi bi-cake-fill me-1"></i> Artisan Pastry</button>
+        <button class="menu-filter-btn" data-category="meals"><i class="bi bi-egg-fill me-1"></i> Meals & Buryam</button>
+        <button class="menu-filter-btn" data-category="bites"><i class="bi bi-basket-fill me-1"></i> Bites</button>
+        <button class="menu-filter-btn" data-category="pastry"><i class="bi bi-cake-fill me-1"></i> Pastry</button>
       </div>
 
       <!-- Menu Grid -->
-      <div class="row g-4" id="menu-items-grid">
+      <div class="row g-3 g-md-4" id="menu-items-grid">
         <!-- Rendered by app.js -->
       </div>
     </div>
@@ -320,31 +382,31 @@
   <section class="booking-section" id="space">
     <div class="container">
       <div class="booking-card-main">
-        <div class="row g-5">
+        <div class="row g-4 g-lg-5">
           <div class="col-lg-7">
             <span class="section-tag">Reservation & Rental</span>
             <h2 class="section-title">Booking Meeting Room & Space</h2>
-            <p class="text-muted mb-4">
+            <p class="text-muted mb-3 small">
               Pesan ruang privat untuk presentasi skripsi, rapat tim startup, workshop kreatif, atau reservasi meja grup di Balcos Compound.
             </p>
 
             <form id="booking-form">
               <!-- Space Selector -->
               <label class="form-label-custom">1. Pilih Tipe Ruangan / Space:</label>
-              <div class="row g-3 mb-4">
-                <div class="col-sm-4">
+              <div class="row g-2 g-sm-3 mb-3">
+                <div class="col-12 col-sm-4">
                   <button type="button" class="space-type-btn active" data-space="meeting-room">
                     <h6><i class="bi bi-display text-primary me-1"></i> Meeting Room</h6>
                     <p>AC, Smart TV 55", Board (Rp 50k/jam)</p>
                   </button>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-12 col-sm-4">
                   <button type="button" class="space-type-btn" data-space="event-space">
                     <h6><i class="bi bi-shop text-primary me-1"></i> Event Space</h6>
                     <p>Compound Area, Sound (Rp 150k/jam)</p>
                   </button>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-12 col-sm-4">
                   <button type="button" class="space-type-btn" data-space="community-table">
                     <h6><i class="bi bi-people text-primary me-1"></i> Komunal Table</h6>
                     <p>Grup Hangout (Free Reserve)</p>
@@ -353,50 +415,50 @@
               </div>
 
               <!-- Date, Time, Duration -->
-              <div class="row g-3 mb-3">
-                <div class="col-md-4">
+              <div class="row g-2 g-sm-3 mb-3">
+                <div class="col-6 col-md-4">
                   <label class="form-label-custom">2. Tanggal:</label>
                   <input type="date" id="booking-date" class="form-control form-control-custom" required>
                 </div>
-                <div class="col-md-4">
+                <div class="col-6 col-md-4">
                   <label class="form-label-custom">3. Jam Mulai:</label>
                   <input type="time" id="booking-time" class="form-control form-control-custom" value="14:00" required>
                 </div>
-                <div class="col-md-4">
+                <div class="col-12 col-md-4">
                   <label class="form-label-custom">4. Durasi: <span class="badge bg-primary text-white ms-1" id="duration-display">2 Jam</span></label>
                   <input type="range" id="booking-duration" class="form-range mt-2" min="1" max="8" value="2">
                 </div>
               </div>
 
               <!-- Capacity & Addon -->
-              <div class="row g-3 mb-4">
-                <div class="col-md-6">
+              <div class="row g-2 g-sm-3 mb-3">
+                <div class="col-12 col-md-6">
                   <label class="form-label-custom">5. Jumlah Orang: <span class="badge bg-secondary text-white ms-1" id="pax-display">6 Orang</span></label>
                   <input type="range" id="booking-pax" class="form-range mt-2" min="1" max="25" value="6">
                 </div>
-                <div class="col-md-6 d-flex align-items-center">
-                  <div class="form-check mt-3">
+                <div class="col-12 col-md-6 d-flex align-items-center">
+                  <div class="form-check mt-1 mt-md-3">
                     <input class="form-check-input" type="checkbox" id="addon-catering">
                     <label class="form-check-label small fw-semibold" for="addon-catering">
-                      + Tambah Paket Snack Box & Kopi (+Rp 20.000/pax)
+                      + Paket Snack Box & Kopi (+Rp 20.000/pax)
                     </label>
                   </div>
                 </div>
               </div>
 
               <!-- Contact Inputs -->
-              <div class="row g-3 mb-3">
-                <div class="col-md-6">
+              <div class="row g-2 g-sm-3 mb-3">
+                <div class="col-12 col-md-6">
                   <label class="form-label-custom">Nama Pemesan:</label>
                   <input type="text" id="booking-name" class="form-control form-control-custom" placeholder="Nama Lengkap / Tim" required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-12 col-md-6">
                   <label class="form-label-custom">Nomor WhatsApp:</label>
                   <input type="tel" id="booking-phone" class="form-control form-control-custom" placeholder="08xxxxxxxxxx" required>
                 </div>
               </div>
 
-              <div class="mb-3">
+              <div class="mb-2">
                 <label class="form-label-custom">Catatan Tambahan (Opsional):</label>
                 <input type="text" id="booking-notes" class="form-control form-control-custom" placeholder="Contoh: Butuh kabel HDMI tambahan, dsb.">
               </div>
@@ -407,38 +469,37 @@
           <div class="col-lg-5">
             <div class="booking-summary-box h-100 d-flex flex-column justify-content-between">
               <div>
-                <div class="d-flex align-items-center justify-content-between border-bottom pb-3 mb-3">
-                  <h5 class="mb-0">Ringkasan Reservasi</h5>
-                  <span class="badge bg-success">Konfirmasi Instan via WA</span>
+                <div class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3">
+                  <h6 class="mb-0 fw-bold">Ringkasan Reservasi</h6>
+                  <span class="badge bg-success">Konfirmasi Instan</span>
                 </div>
 
-                <ul class="list-unstyled mb-4 small text-light">
+                <ul class="list-unstyled mb-3 small text-light">
                   <li class="mb-2 d-flex justify-content-between">
-                    <span>Fasilitas Termasuk:</span>
-                    <span class="text-white fw-semibold">Smart TV, AC, Wi-Fi, Glassboard</span>
+                    <span>Fasilitas:</span>
+                    <span class="text-white fw-semibold">Smart TV 55", AC, Wi-Fi</span>
                   </li>
                   <li class="mb-2 d-flex justify-content-between">
                     <span>Lokasi:</span>
-                    <span class="text-white fw-semibold">Balcos Compound, Nologaten</span>
+                    <span class="text-white fw-semibold">Balcos Compound Nologaten</span>
                   </li>
                   <li class="mb-2 d-flex justify-content-between">
-                    <span>Jam Operasional:</span>
-                    <span class="text-white fw-semibold">24 Jam Penuh</span>
+                    <span>Operasional:</span>
+                    <span class="text-white fw-semibold">24 Jam Non-Stop</span>
                   </li>
                 </ul>
 
-                <div class="bg-dark p-3 rounded mb-4">
+                <div class="bg-dark p-3 rounded mb-3">
                   <span class="text-muted small d-block">Estimasi Total Biaya:</span>
                   <div class="booking-total-val" id="booking-total-price">Rp 100.000</div>
-                  <small class="text-muted">Sudah termasuk pemakaian listrik & fasilitas room.</small>
+                  <small class="text-muted">Sudah termasuk fasilitas ruangan.</small>
                 </div>
               </div>
 
               <div>
-                <button type="button" class="btn btn-primary w-100 py-3 fw-bold rounded-pill" id="submit-booking-btn">
+                <button type="button" class="btn btn-primary w-100 py-2 py-sm-3 fw-bold rounded-pill" id="submit-booking-btn">
                   <i class="bi bi-whatsapp me-2"></i> Konfirmasi Booking via WhatsApp
                 </button>
-                <p class="text-center text-muted small mt-2 mb-0">Admin Balcos akan segera membalas konfirmasi slot.</p>
               </div>
             </div>
           </div>
@@ -453,39 +514,31 @@
       <div class="row align-items-center gy-4">
         <div class="col-lg-6">
           <span class="section-tag text-warning">Creative Community Hub</span>
-          <h2 class="section-title text-white">Rumah Komunitas, Workshop & Festival FESMO 2026</h2>
-          <p class="text-light mb-4">
+          <h2 class="section-title text-white">Rumah Komunitas, Workshop & FESMO 2026</h2>
+          <p class="text-light mb-3 small">
             Balcos bukan sekadar kedai kopi, melainkan ruang temu (A Place to Connect) untuk beragam eksibisi karya, workshop kanvas & barista, diskusi kreatif, hingga festival musik.
           </p>
 
-          <div class="d-flex flex-column gap-3 mb-4">
-            <div class="d-flex align-items-start gap-3">
+          <div class="d-flex flex-column gap-2 mb-3">
+            <div class="d-flex align-items-start gap-2">
               <div class="p-2 bg-primary rounded-circle text-white"><i class="bi bi-mic-fill"></i></div>
               <div>
-                <h6 class="text-white mb-1">Talkshow & Networking</h6>
-                <small class="text-secondary">Temu wicara bersama tokoh kreatif, praktisi startup, dan komikus favorit.</small>
+                <h6 class="text-white mb-0 small fw-bold">Talkshow & Networking</h6>
+                <small class="text-secondary" style="font-size:0.75rem;">Temu wicara bersama tokoh kreatif & praktisi.</small>
               </div>
             </div>
 
-            <div class="d-flex align-items-start gap-3">
+            <div class="d-flex align-items-start gap-2">
               <div class="p-2 bg-primary rounded-circle text-white"><i class="bi bi-palette-fill"></i></div>
               <div>
-                <h6 class="text-white mb-1">Canvas & Art Workshops</h6>
-                <small class="text-secondary">Sesi melukis santai akhir pekan bersama para seniman lokal Yogyakarta.</small>
-              </div>
-            </div>
-
-            <div class="d-flex align-items-start gap-3">
-              <div class="p-2 bg-primary rounded-circle text-white"><i class="bi bi-controller"></i></div>
-              <div>
-                <h6 class="text-white mb-1">Wazfun Community Games</h6>
-                <small class="text-secondary">Board games corner & turnamen seru bareng teman satu komunitas.</small>
+                <h6 class="text-white mb-0 small fw-bold">Canvas & Art Workshops</h6>
+                <small class="text-secondary" style="font-size:0.75rem;">Sesi melukis santai bersama seniman Yogyakarta.</small>
               </div>
             </div>
           </div>
 
-          <a href="https://instagram.com/balcos.co" target="_blank" class="btn btn-outline-light rounded-pill px-4">
-            <i class="bi bi-instagram me-2"></i> Pantau Jadwal Event di @balcos.co
+          <a href="https://instagram.com/balcos.co" target="_blank" class="btn btn-outline-light rounded-pill px-4 py-2 small">
+            <i class="bi bi-instagram me-2"></i> Pantau di @balcos.co
           </a>
         </div>
 
@@ -494,8 +547,8 @@
             <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1000&q=80" alt="FESMO Festival Event" class="event-banner-img">
             <div class="event-banner-overlay">
               <span class="badge bg-danger mb-2 align-self-start">FESMO Highlight</span>
-              <h4 class="text-white mb-1">Live Sessions & Creative Talk at Balcos</h4>
-              <p class="text-light small mb-0">Tempat kumpul favorit komunitas muda Sleman & Yogyakarta.</p>
+              <h5 class="text-white mb-1">Live Sessions & Creative Talk</h5>
+              <p class="text-light small mb-0">Tempat kumpul favorit komunitas muda Sleman & Jogja.</p>
             </div>
           </div>
         </div>
@@ -506,16 +559,16 @@
   <!-- 10. VERIFIED GOOGLE REVIEWS SECTION -->
   <section class="reviews-section" id="reviews">
     <div class="container">
-      <div class="text-center mb-5">
+      <div class="text-center mb-4">
         <span class="section-tag">Google Maps Reviews</span>
-        <h2 class="section-title">Apa Kata Mereka Tentang Balcos Compound?</h2>
+        <h2 class="section-title">Apa Kata Pengunjung Balcos?</h2>
         <div class="d-flex justify-content-center align-items-center gap-2 mt-2">
-          <span class="badge bg-warning text-dark fs-6 px-3 py-2 rounded-pill">★ 4.5 dari 5.0</span>
-          <span class="text-muted">243+ ulasan terverifikasi</span>
+          <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold">★ 4.5 dari 5.0</span>
+          <span class="text-muted small">243+ ulasan terverifikasi</span>
         </div>
       </div>
 
-      <div class="row g-4" id="reviews-grid">
+      <div class="row g-3 g-md-4" id="reviews-grid">
         <!-- Rendered by app.js from BALCOS_REVIEWS -->
       </div>
     </div>
@@ -524,60 +577,45 @@
   <!-- 11. LOCATION & DIRECTIONS HUB -->
   <section class="location-section" id="location">
     <div class="container">
-      <div class="row g-5 align-items-center">
+      <div class="row g-4 g-lg-5 align-items-center">
         <div class="col-lg-5">
           <span class="section-tag">Visit & Connect</span>
           <h2 class="section-title">Kunjungi Balcos Compound</h2>
-          <p class="text-muted mb-4">
+          <p class="text-muted mb-3 small">
             Akses strategis di kawasan kampus Nologaten Caturtunggal Sleman, mudah dijangkau dari Gejayan, Seturan, dan Ambarrukmo.
           </p>
 
-          <div class="d-flex flex-column gap-3 mb-4">
-            <div class="d-flex align-items-start gap-3">
-              <i class="bi bi-geo-alt-fill text-primary fs-4"></i>
+          <div class="d-flex flex-column gap-2 mb-3">
+            <div class="d-flex align-items-start gap-2">
+              <i class="bi bi-geo-alt-fill text-primary fs-5"></i>
               <div>
-                <h6 class="mb-1">Alamat Lengkap:</h6>
-                <p class="text-muted small mb-0">
+                <h6 class="mb-0 small fw-bold">Alamat:</h6>
+                <p class="text-muted small mb-1" style="font-size:0.8rem;">
                   Jl. Kedawung, Nologaten, Caturtunggal, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281
                 </p>
-                <span class="badge bg-light text-dark border mt-1">Plus Code: 6CF2+CR</span>
+                <span class="badge bg-light text-dark border" style="font-size:0.7rem;">Plus Code: 6CF2+CR</span>
               </div>
             </div>
 
-            <div class="d-flex align-items-start gap-3">
-              <i class="bi bi-clock-fill text-primary fs-4"></i>
+            <div class="d-flex align-items-start gap-2">
+              <i class="bi bi-clock-fill text-primary fs-5"></i>
               <div>
-                <h6 class="mb-1">Jam Buka:</h6>
-                <p class="text-success fw-bold small mb-0">24 Jam Setiap Hari (Senin - Minggu)</p>
+                <h6 class="mb-0 small fw-bold">Jam Buka:</h6>
+                <p class="text-success fw-bold small mb-0" style="font-size:0.8rem;">24 Jam Setiap Hari</p>
               </div>
             </div>
 
-            <div class="d-flex align-items-start gap-3">
-              <i class="bi bi-whatsapp text-success fs-4"></i>
+            <div class="d-flex align-items-start gap-2">
+              <i class="bi bi-whatsapp text-success fs-5"></i>
               <div>
-                <h6 class="mb-1">Hotline & Reservasi:</h6>
-                <a href="https://wa.me/6285117439369" target="_blank" class="fw-bold">0851-1743-9369</a>
+                <h6 class="mb-0 small fw-bold">WhatsApp:</h6>
+                <a href="https://wa.me/6285117439369" target="_blank" class="fw-bold small">0851-1743-9369</a>
               </div>
             </div>
           </div>
 
-          <div class="mb-4">
-            <h6 class="small fw-bold text-uppercase text-muted mb-2">Tersedia juga di Aplikasi:</h6>
-            <div class="d-flex flex-wrap gap-2">
-              <a href="https://gofood.co.id" target="_blank" class="delivery-partner-badge">
-                <i class="bi bi-bag text-danger"></i> GoFood
-              </a>
-              <a href="https://food.grab.com" target="_blank" class="delivery-partner-badge">
-                <i class="bi bi-bicycle text-success"></i> GrabFood
-              </a>
-              <a href="https://shopee.co.id/universal-link/now-food" target="_blank" class="delivery-partner-badge">
-                <i class="bi bi-shop text-warning"></i> ShopeeFood
-              </a>
-            </div>
-          </div>
-
-          <a href="https://maps.google.com/?q=Sebelas+Coffee+Balcos+Compound+Jl+Kedawung+Nologaten+Sleman" target="_blank" class="btn btn-primary rounded-pill px-4 py-2">
-            <i class="bi bi-map-fill me-2"></i> Buka Petunjuk Arah di Google Maps
+          <a href="https://maps.google.com/?q=Sebelas+Coffee+Balcos+Compound+Jl+Kedawung+Nologaten+Sleman" target="_blank" class="btn btn-primary rounded-pill px-4 py-2 small">
+            <i class="bi bi-map-fill me-2"></i> Buka Rute di Google Maps
           </a>
         </div>
 
@@ -602,9 +640,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <div class="text-center mb-4">
-            <span class="section-tag">Frequently Asked Questions</span>
-            <h3 class="section-title">Pertanyaan Seputar Balcos Compound</h3>
+          <div class="text-center mb-3">
+            <span class="section-tag">FAQ</span>
+            <h3 class="section-title">Pertanyaan Seputar Balcos</h3>
           </div>
 
           <div class="faq-item">
@@ -623,7 +661,7 @@
               <i class="bi bi-chevron-down"></i>
             </div>
             <div class="faq-answer">
-              Anabul (anjing/kucing) sangat dipersilakan di area outdoor dan semi-outdoor kami. Pastikan anabul dalam pengawasan tali/harness dan menjaga kebersihan bersama ya!
+              Anabul (anjing/kucing) sangat dipersilakan di area outdoor dan semi-outdoor kami. Pastikan anabul dalam pengawasan tali/harness dan menjaga kebersihan ya!
             </div>
           </div>
 
@@ -636,16 +674,6 @@
               Anda bisa menggunakan form reservasi online di website ini pada bagian "Meeting Room", lalu konfirmasi waktu langsung via WhatsApp kami di 0851-1743-9369.
             </div>
           </div>
-
-          <div class="faq-item">
-            <div class="faq-question">
-              <span>Apakah tersedia area parkir mobil dan motor?</span>
-              <i class="bi bi-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-              Tersedia area parkir motor yang luas dan parkir mobil di area depan compound dengan penjagaan juru parkir yang ramah.
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -654,13 +682,13 @@
   <!-- 13. FOOTER -->
   <footer class="balcos-footer">
     <div class="container">
-      <div class="row gy-4 mb-5">
+      <div class="row gy-4 mb-4">
         <div class="col-lg-4">
-          <div class="d-flex align-items-center gap-3 mb-3">
-            <img src="assets/balcos-logo.png" alt="Balcos Logo" style="width:40px; height:40px; object-fit:contain;">
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <img src="assets/balcos-logo.png" alt="Balcos Logo" style="width:36px; height:36px; object-fit:contain;">
             <h5 class="mb-0 text-white font-display">balcos.co</h5>
           </div>
-          <p class="text-secondary mb-3">
+          <p class="text-secondary mb-3 small">
             Balcos Compound by Sebelas Coffee. A Place to Connect. Kedai kopi 24 jam, creative hub, dan ruang temu komunitas di Sleman, Yogyakarta.
           </p>
           <div class="d-flex gap-2">
@@ -672,49 +700,49 @@
         </div>
 
         <div class="col-6 col-lg-2">
-          <h6 class="text-white mb-3">Navigasi</h6>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="#hero" class="text-secondary">Beranda</a></li>
-            <li class="mb-2"><a href="#menu" class="text-secondary">Daftar Menu</a></li>
-            <li class="mb-2"><a href="#space" class="text-secondary">Meeting Room</a></li>
-            <li class="mb-2"><a href="#events" class="text-secondary">Event Komunitas</a></li>
-            <li class="mb-2"><a href="#location" class="text-secondary">Lokasi & Rute</a></li>
+          <h6 class="text-white mb-2 small fw-bold">Navigasi</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-1"><a href="#hero" class="text-secondary">Beranda</a></li>
+            <li class="mb-1"><a href="#menu" class="text-secondary">Daftar Menu</a></li>
+            <li class="mb-1"><a href="#space" class="text-secondary">Meeting Room</a></li>
+            <li class="mb-1"><a href="#events" class="text-secondary">Event</a></li>
+            <li class="mb-1"><a href="#location" class="text-secondary">Lokasi</a></li>
           </ul>
         </div>
 
         <div class="col-6 col-lg-3">
-          <h6 class="text-white mb-3">Cabang Sebelas Coffee</h6>
-          <ul class="list-unstyled">
-            <li class="mb-2"><span class="text-white fw-bold">Sebelas - Balcos Compound (24h)</span></li>
-            <li class="mb-2"><span class="text-secondary">Sebelas Coffee - Monjali</span></li>
-            <li class="mb-2"><span class="text-secondary">Sebelas Coffee - Veteran</span></li>
-            <li class="mb-2"><span class="text-secondary">Sebelas Coffee - Gejayan</span></li>
+          <h6 class="text-white mb-2 small fw-bold">Sebelas Coffee</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-1"><span class="text-white fw-bold">Balcos Compound (24h)</span></li>
+            <li class="mb-1"><span class="text-secondary">Monjali</span></li>
+            <li class="mb-1"><span class="text-secondary">Veteran</span></li>
+            <li class="mb-1"><span class="text-secondary">Gejayan</span></li>
           </ul>
         </div>
 
         <div class="col-lg-3">
-          <h6 class="text-white mb-3">Kontak & Jam Buka</h6>
-          <p class="mb-1 text-secondary"><i class="bi bi-clock me-2"></i> Buka 24 Jam Non-Stop</p>
-          <p class="mb-1 text-secondary"><i class="bi bi-telephone me-2"></i> 0851-1743-9369</p>
-          <p class="mb-0 text-secondary"><i class="bi bi-geo-alt me-2"></i> Jl. Kedawung, Nologaten, Sleman, DIY</p>
+          <h6 class="text-white mb-2 small fw-bold">Kontak & Jam Buka</h6>
+          <p class="mb-1 text-secondary small"><i class="bi bi-clock me-2"></i> Buka 24 Jam Non-Stop</p>
+          <p class="mb-1 text-secondary small"><i class="bi bi-telephone me-2"></i> 0851-1743-9369</p>
+          <p class="mb-0 text-secondary small"><i class="bi bi-geo-alt me-2"></i> Nologaten, Sleman, DIY</p>
         </div>
       </div>
 
-      <div class="border-top border-secondary pt-4 text-center">
-        <small class="text-secondary">
-          &copy; 2026 <strong>Balcos.co</strong> — Balcos Compound by Sebelas Coffee. All rights reserved. Made for creative people in Yogyakarta.
+      <div class="border-top border-secondary pt-3 text-center">
+        <small class="text-secondary" style="font-size:0.75rem;">
+          &copy; 2026 <strong>Balcos.co</strong> — Balcos Compound by Sebelas Coffee. All rights reserved.
         </small>
       </div>
     </div>
   </footer>
 
-  <!-- 14. SHOPPING CART DRAWER -->
+  <!-- 14. SHOPPING CART DRAWER (iOS Frosted Glass) -->
   <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
   <div class="cart-drawer" id="cart-drawer">
     <div class="cart-drawer-header">
       <div class="d-flex align-items-center gap-2">
         <img src="assets/balcos-logo.png" alt="Balcos" style="width:24px; height:24px; object-fit:contain;">
-        <h5 class="mb-0">Keranjang Pesanan</h5>
+        <h6 class="mb-0 fw-bold">Keranjang Pesanan</h6>
       </div>
       <button class="btn-close" id="close-cart-btn"></button>
     </div>
@@ -733,13 +761,13 @@
           <button class="btn btn-sm text-danger p-0 small" id="clear-cart-btn"><i class="bi bi-trash"></i> Hapus Semua</button>
         </div>
 
-        <div id="cart-items-list" class="mb-4">
+        <div id="cart-items-list" class="mb-3">
           <!-- Populated by app.js -->
         </div>
 
         <div class="border-top pt-3 mb-3">
           <label class="form-label-custom">Tipe Pesanan:</label>
-          <div class="d-flex gap-3 mb-3">
+          <div class="d-flex gap-3 mb-2">
             <div class="form-check">
               <input class="form-check-input" type="radio" name="order-type" id="type-dinein" value="Dine-in (Makan di Tempat)" checked>
               <label class="form-check-label small" for="type-dinein">Makan di Tempat</label>
@@ -751,8 +779,8 @@
           </div>
 
           <div class="mb-2">
-            <label class="form-label-custom">Nomor Meja / Keterangan:</label>
-            <input type="text" id="cart-table-number" class="form-control form-control-custom" placeholder="Contoh: Meja Bar 04 / Meja Outdoor">
+            <label class="form-label-custom">Nomor Meja / Area:</label>
+            <input type="text" id="cart-table-number" class="form-control form-control-custom" placeholder="Contoh: Meja Bar 04">
           </div>
 
           <div class="mb-2">
@@ -771,10 +799,10 @@
     <div class="cart-drawer-footer">
       <div class="d-flex justify-content-between align-items-center mb-3">
         <span class="fw-bold">Total Pembayaran:</span>
-        <span class="fs-5 fw-bold text-primary font-display" id="cart-subtotal-price">Rp 0</span>
+        <span class="fs-5 fw-bold text-primary" id="cart-subtotal-price">Rp 0</span>
       </div>
       <button class="btn btn-primary w-100 py-3 rounded-pill fw-bold" id="checkout-wa-btn">
-        <i class="bi bi-whatsapp me-2"></i> Kirim Pesanan ke WhatsApp Barista
+        <i class="bi bi-whatsapp me-2"></i> Kirim Pesanan via WhatsApp
       </button>
     </div>
   </div>
@@ -784,15 +812,15 @@
     <div class="d-flex align-items-center gap-2">
       <i class="bi bi-bag-fill fs-5"></i>
       <div>
-        <span class="fw-bold d-block" id="float-cart-qty">0 Item</span>
-        <small class="opacity-75">Ketuk untuk checkout</small>
+        <span class="fw-bold d-block small" id="float-cart-qty">0 Item</span>
+        <small class="opacity-75" style="font-size:0.7rem;">Ketuk untuk checkout</small>
       </div>
     </div>
-    <div class="fw-bold font-display fs-6" id="float-cart-total">Rp 0</div>
+    <div class="fw-bold fs-6" id="float-cart-total">Rp 0</div>
   </div>
 
-  <!-- 16. MOBILE BOTTOM NAVIGATION -->
-  <div class="mobile-bottom-nav">
+  <!-- 16. MOBILE BOTTOM NAVIGATION (Minimalist Apple iOS Tab Bar) -->
+  <nav class="mobile-bottom-nav">
     <a href="#hero" class="mobile-nav-item active">
       <i class="bi bi-house-door-fill"></i>
       <span>Home</span>
@@ -809,12 +837,12 @@
       <i class="bi bi-geo-alt-fill"></i>
       <span>Lokasi</span>
     </a>
-    <button class="mobile-nav-item border-0 bg-transparent cart-drawer-toggle position-relative">
+    <button class="mobile-nav-item border-0 bg-transparent cart-drawer-toggle position-relative p-0">
       <i class="bi bi-bag-fill"></i>
       <span>Order</span>
-      <span class="badge bg-danger position-absolute top-0 end-0 rounded-pill cart-count-badge" style="display:none;">0</span>
+      <span class="badge bg-danger position-absolute top-0 end-0 rounded-pill cart-count-badge" style="display:none; font-size:0.6rem; transform: translate(30%, -30%);">0</span>
     </button>
-  </div>
+  </nav>
 
   <!-- 17. INSTAGRAM STORY VIEWER MODAL -->
   <div class="story-modal" id="story-modal">
@@ -835,7 +863,7 @@
 
       <div class="story-modal-content">
         <div>
-          <h5 id="story-modal-headline" class="text-white mb-2 font-display">Headline</h5>
+          <h5 id="story-modal-headline" class="text-white mb-2">Headline</h5>
           <p id="story-modal-text" class="text-light small mb-3">Story details...</p>
           <div id="story-modal-tags" class="d-flex flex-wrap gap-1 mb-3"></div>
         </div>
@@ -845,7 +873,7 @@
             <i class="bi bi-chevron-left"></i> Prev
           </button>
           <a href="#space" class="btn btn-sm btn-primary rounded-pill px-3" onclick="window.balcosApp.closeStory()">
-            Explore More
+            Explore
           </a>
           <button class="btn btn-sm btn-outline-light rounded-pill px-3" id="story-next-btn">
             Next <i class="bi bi-chevron-right"></i>

@@ -1,6 +1,6 @@
 /* ==========================================================================
    BALCOS.CO - Compound by Sebelas Coffee
-   iOS Liquid Glass & Modern Flexible Theme System (Mobile-Optimized)
+   iOS Liquid Glass & Modern Flexible Theme System (Refined Mobile UX)
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
@@ -36,9 +36,9 @@
   
   /* iOS Liquid Glass Tokens (Light Mode) */
   --glass-bg: rgba(255, 255, 255, 0.72);
-  --glass-bg-elevated: rgba(255, 255, 255, 0.82);
+  --glass-bg-elevated: rgba(255, 255, 255, 0.84);
+  --glass-drawer: rgba(255, 255, 255, 0.94);
   --glass-border: 1px solid rgba(255, 255, 255, 0.75);
-  --glass-border-subtle: 1px solid rgba(234, 84, 52, 0.14);
   --glass-blur: blur(24px) saturate(190%) contrast(98%);
   --glass-shadow-sm: 0 4px 16px 0 rgba(0, 0, 0, 0.04), inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
   --glass-shadow-md: 0 12px 36px 0 rgba(0, 0, 0, 0.06), inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.95);
@@ -52,7 +52,7 @@
   --radius-xl: 30px;
   --radius-full: 9999px;
   
-  --nav-height: 72px;
+  --nav-height: 68px;
   --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -83,9 +83,9 @@
   
   /* iOS Liquid Glass Tokens (Dark Mode) */
   --glass-bg: rgba(20, 24, 32, 0.74);
-  --glass-bg-elevated: rgba(28, 34, 45, 0.82);
+  --glass-bg-elevated: rgba(28, 34, 45, 0.84);
+  --glass-drawer: rgba(18, 22, 29, 0.94);
   --glass-border: 1px solid rgba(255, 255, 255, 0.14);
-  --glass-border-subtle: 1px solid rgba(255, 90, 54, 0.22);
   --glass-blur: blur(26px) saturate(200%) contrast(100%);
   --glass-shadow-sm: 0 4px 16px 0 rgba(0, 0, 0, 0.35), inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
   --glass-shadow-md: 0 12px 36px 0 rgba(0, 0, 0, 0.55), inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.22);
@@ -120,6 +120,7 @@
   
   --glass-bg: rgba(255, 255, 255, 0.75);
   --glass-bg-elevated: rgba(255, 255, 255, 0.85);
+  --glass-drawer: rgba(250, 253, 249, 0.95);
   --glass-border: 1px solid rgba(255, 255, 255, 0.8);
   --glass-shadow-md: 0 12px 36px 0 rgba(44, 110, 73, 0.08), inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.95);
   --shadow-primary: 0 8px 25px rgba(44, 110, 73, 0.22);
@@ -152,6 +153,7 @@
   
   --glass-bg: rgba(18, 21, 34, 0.75);
   --glass-bg-elevated: rgba(26, 31, 50, 0.84);
+  --glass-drawer: rgba(15, 18, 30, 0.95);
   --glass-border: 1px solid rgba(255, 255, 255, 0.14);
   --glass-shadow-md: 0 12px 36px 0 rgba(0, 0, 0, 0.6), inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.25);
   --shadow-primary: 0 8px 25px rgba(99, 102, 241, 0.35);
@@ -185,30 +187,30 @@ body {
 body::before {
   content: '';
   position: fixed;
-  top: -150px;
-  right: -100px;
-  width: 500px;
-  height: 500px;
+  top: -120px;
+  right: -80px;
+  width: 450px;
+  height: 450px;
   background: radial-gradient(circle, var(--color-primary-glow) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.6;
+  opacity: 0.55;
   filter: blur(60px);
 }
 
 body::after {
   content: '';
   position: fixed;
-  bottom: 10%;
-  left: -150px;
-  width: 450px;
-  height: 450px;
+  bottom: 12%;
+  left: -120px;
+  width: 400px;
+  height: 400px;
   background: radial-gradient(circle, var(--color-primary-soft) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.45;
+  opacity: 0.4;
   filter: blur(60px);
 }
 
@@ -229,45 +231,15 @@ a:hover {
   color: var(--color-primary-hover);
 }
 
-/* ==========================================================================
-   LIQUID GLASS (iOS Glassmorphism Utility Classes)
-   ========================================================================== */
-.liquid-glass {
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: var(--glass-border);
-  box-shadow: var(--glass-shadow-md);
-}
-
-.liquid-glass-card {
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: var(--glass-border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--glass-shadow-md);
-  transition: var(--transition-smooth);
-}
-
-.liquid-glass-pill {
-  background: var(--glass-bg-elevated);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: var(--glass-border);
-  border-radius: var(--radius-full);
-  box-shadow: var(--glass-shadow-sm);
-}
-
 /* --- TOP ANNOUNCEMENT TICKER --- */
 .top-ticker-bar {
   background: var(--color-primary);
   color: #FFFFFF;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  padding: 6px 0;
+  padding: 5px 0;
   position: relative;
-  z-index: 1050;
+  z-index: 1035;
   overflow: hidden;
 }
 .ticker-wrap {
@@ -310,7 +282,7 @@ a:hover {
 }
 .balcos-navbar.scrolled {
   box-shadow: var(--glass-shadow-md);
-  height: 64px;
+  height: 60px;
 }
 .navbar-brand-logo {
   display: flex;
@@ -318,8 +290,8 @@ a:hover {
   gap: 10px;
 }
 .brand-logo-img {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   object-fit: contain;
   transition: var(--transition-smooth);
 }
@@ -327,13 +299,13 @@ a:hover {
   line-height: 1.15;
 }
 .brand-text .title {
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   font-weight: 800;
   color: var(--text-main);
   letter-spacing: -0.01em;
 }
 .brand-text .subtitle {
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 600;
   color: var(--color-primary);
   text-transform: uppercase;
@@ -341,10 +313,10 @@ a:hover {
 }
 
 .nav-link {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-muted) !important;
-  padding: 7px 15px !important;
+  padding: 6px 14px !important;
   border-radius: var(--radius-full);
   transition: var(--transition-smooth);
 }
@@ -365,14 +337,14 @@ a:hover {
 .theme-toggle-btn {
   border: none;
   background: transparent;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
   transition: var(--transition-smooth);
 }
@@ -387,12 +359,12 @@ a:hover {
   background: var(--color-primary);
   color: #FFF !important;
   font-weight: 700;
-  font-size: 0.86rem;
-  padding: 8px 18px;
+  font-size: 0.84rem;
+  padding: 7px 16px;
   border-radius: var(--radius-full);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   border: none;
   box-shadow: var(--shadow-primary);
   transition: var(--transition-smooth);
@@ -402,33 +374,65 @@ a:hover {
   transform: translateY(-2px);
 }
 
+/* --- MOBILE OFFCANVAS DRAWER (iOS Frosted Sheet) --- */
+.mobile-offcanvas-drawer {
+  background: var(--glass-drawer) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  -webkit-backdrop-filter: var(--glass-blur) !important;
+  border-left: var(--glass-border) !important;
+  z-index: 1065 !important;
+  max-width: 320px;
+}
+.mobile-nav-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mobile-drawer-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background: var(--glass-bg);
+  border: var(--glass-border);
+  transition: var(--transition-smooth);
+}
+.mobile-drawer-link:hover, .mobile-drawer-link:active {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  transform: translateX(4px);
+}
+
 /* --- HERO SECTION --- */
 .hero-section {
   position: relative;
-  padding: 48px 0 60px;
+  padding: 42px 0 54px;
   z-index: 1;
 }
 .hero-badge-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 15px;
+  padding: 5px 14px;
   background: var(--glass-bg-elevated);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border: var(--glass-border);
   border-radius: var(--radius-full);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--color-primary);
   box-shadow: var(--glass-shadow-sm);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 .hero-title {
-  font-size: clamp(1.85rem, 4.2vw, 3.2rem);
+  font-size: clamp(1.8rem, 4vw, 3.1rem);
   font-weight: 800;
   line-height: 1.16;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   letter-spacing: -0.02em;
 }
 .hero-title .highlight {
@@ -448,24 +452,24 @@ a:hover {
   border-radius: 4px;
 }
 .hero-lead {
-  font-size: 1.02rem;
+  font-size: 0.98rem;
   color: var(--text-muted);
-  max-width: 520px;
-  margin-bottom: 28px;
-  line-height: 1.6;
+  max-width: 500px;
+  margin-bottom: 26px;
+  line-height: 1.58;
 }
 .hero-cta-group {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 .btn-primary-hero {
   background: var(--color-primary);
   color: #FFF;
   font-weight: 700;
-  font-size: 0.94rem;
-  padding: 12px 26px;
+  font-size: 0.92rem;
+  padding: 11px 24px;
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-primary);
   display: inline-flex;
@@ -486,8 +490,8 @@ a:hover {
   border: var(--glass-border);
   color: var(--text-main);
   font-weight: 700;
-  font-size: 0.94rem;
-  padding: 12px 22px;
+  font-size: 0.92rem;
+  padding: 11px 20px;
   border-radius: var(--radius-full);
   box-shadow: var(--glass-shadow-sm);
   display: inline-flex;
@@ -503,14 +507,14 @@ a:hover {
 .hero-social-proof {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 .avatar-stack {
   display: flex;
 }
 .avatar-stack img {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   border: 2px solid var(--bg-surface);
   margin-left: -10px;
@@ -519,12 +523,12 @@ a:hover {
   margin-left: 0;
 }
 .hero-proof-text {
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   font-weight: 600;
   line-height: 1.3;
 }
 
-/* Hero Media Showcase Card (iOS Liquid Glass Overlay) */
+/* Hero Media Showcase Card */
 .hero-media-card {
   position: relative;
   border-radius: var(--radius-xl);
@@ -534,43 +538,43 @@ a:hover {
 }
 .hero-main-img {
   width: 100%;
-  height: 440px;
+  height: 420px;
   object-fit: cover;
   display: block;
 }
 .hero-floating-glass-card {
   position: absolute;
-  bottom: 16px;
-  left: 16px;
-  right: 16px;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
   background: var(--glass-bg-elevated);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border: var(--glass-border);
   border-radius: var(--radius-md);
-  padding: 14px 18px;
+  padding: 12px 16px;
   box-shadow: var(--glass-shadow-md);
 }
 .badge-24h {
   background: #22C55E;
   color: #FFF;
   font-weight: 700;
-  font-size: 0.72rem;
-  padding: 4px 10px;
+  font-size: 0.7rem;
+  padding: 3px 9px;
   border-radius: var(--radius-full);
 }
 .hero-floating-pill {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 14px;
+  right: 14px;
   background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #FFF;
-  padding: 6px 14px;
+  padding: 5px 12px;
   border-radius: var(--radius-full);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
 }
 
@@ -581,7 +585,7 @@ a:hover {
   -webkit-backdrop-filter: var(--glass-blur);
   border-top: var(--glass-border);
   border-bottom: var(--glass-border);
-  padding: 12px 0;
+  padding: 10px 0;
   position: relative;
   z-index: 2;
 }
@@ -590,18 +594,18 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 12px;
 }
 .crowd-status-text {
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 .crowd-tag {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  padding: 3px 9px;
+  padding: 2px 8px;
   border-radius: var(--radius-full);
 }
 .crowd-tag.low { background: #DCFCE7; color: #166534; }
@@ -614,14 +618,14 @@ a:hover {
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   color: var(--text-main);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  padding: 6px 14px;
+  padding: 5px 12px;
   border-radius: var(--radius-full);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   box-shadow: var(--glass-shadow-sm);
   transition: var(--transition-smooth);
 }
@@ -633,13 +637,13 @@ a:hover {
 
 /* --- INSTAGRAM STORIES / HIGHLIGHTS BAR --- */
 .stories-section {
-  padding: 26px 0 8px;
+  padding: 22px 0 6px;
   position: relative;
   z-index: 2;
 }
 .stories-scroll-wrapper {
   overflow-x: auto;
-  padding: 4px 2px 12px;
+  padding: 4px 2px 10px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
@@ -648,14 +652,14 @@ a:hover {
 }
 .stories-track {
   display: flex;
-  gap: 18px;
+  gap: 16px;
   min-width: max-content;
 }
 .story-bubble-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
@@ -663,8 +667,8 @@ a:hover {
   transform: translateY(-3px);
 }
 .story-avatar-ring {
-  width: 68px;
-  height: 68px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   padding: 2.5px;
   background: linear-gradient(45deg, #F58529, #EA5434, #DD2A7B, #8134AF);
@@ -685,19 +689,19 @@ a:hover {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   background: var(--color-primary);
   color: #FFF;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   border: 2px solid var(--bg-page);
 }
 .story-title-text {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   font-weight: 600;
   color: var(--text-main);
   text-transform: capitalize;
@@ -705,7 +709,7 @@ a:hover {
 
 /* --- KEY HIGHLIGHTS / PILLARS --- */
 .pillars-section {
-  padding: 55px 0;
+  padding: 50px 0;
   position: relative;
   z-index: 2;
 }
@@ -715,43 +719,43 @@ a:hover {
   -webkit-backdrop-filter: var(--glass-blur);
   border: var(--glass-border);
   border-radius: var(--radius-lg);
-  padding: 22px;
+  padding: 20px;
   height: 100%;
   box-shadow: var(--glass-shadow-sm);
   transition: var(--transition-smooth);
 }
 .pillar-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: var(--glass-shadow-md);
   border-color: var(--color-primary);
 }
 .pillar-icon-box {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   background: var(--color-primary-soft);
   color: var(--color-primary);
-  border-radius: 14px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.35rem;
-  margin-bottom: 14px;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
 }
 .pillar-title {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 .pillar-text {
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   color: var(--text-muted);
   margin-bottom: 0;
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 /* --- MENU SECTION --- */
 .menu-section {
-  padding: 65px 0;
+  padding: 55px 0;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
@@ -761,31 +765,31 @@ a:hover {
   z-index: 2;
 }
 .section-tag {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--color-primary);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   display: inline-block;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 .section-title {
-  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
   font-weight: 800;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 .section-subtitle {
   color: var(--text-muted);
-  max-width: 580px;
-  font-size: 0.92rem;
+  max-width: 560px;
+  font-size: 0.9rem;
 }
 
 .menu-filter-bar {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   overflow-x: auto;
-  padding-bottom: 8px;
+  padding-bottom: 6px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
@@ -799,9 +803,9 @@ a:hover {
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   color: var(--text-muted);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  padding: 7px 16px;
+  padding: 6px 14px;
   border-radius: var(--radius-full);
   cursor: pointer;
   box-shadow: var(--glass-shadow-sm);
@@ -819,14 +823,14 @@ a:hover {
 }
 .menu-search-box input {
   width: 100%;
-  padding: 9px 16px 9px 40px;
+  padding: 8px 14px 8px 38px;
   border-radius: var(--radius-full);
   border: var(--glass-border);
   background: var(--glass-bg-elevated);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   color: var(--text-main);
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   outline: none;
   box-shadow: var(--glass-shadow-sm);
   transition: var(--transition-smooth);
@@ -837,13 +841,13 @@ a:hover {
 }
 .menu-search-box i {
   position: absolute;
-  left: 15px;
+  left: 14px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-light);
 }
 
-/* Menu Item Card (iOS Liquid Glass) */
+/* Menu Item Card (iOS Liquid Glass with Safe Typography) */
 .menu-card {
   background: var(--glass-bg-elevated) !important;
   backdrop-filter: var(--glass-blur);
@@ -855,12 +859,12 @@ a:hover {
   transition: var(--transition-smooth);
 }
 .menu-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: var(--glass-shadow-md) !important;
   border-color: var(--color-primary) !important;
 }
 .menu-card-img-wrapper {
-  height: 165px;
+  height: 155px;
   overflow: hidden;
   position: relative;
 }
@@ -871,47 +875,48 @@ a:hover {
   transition: transform 0.4s ease;
 }
 .menu-card:hover .menu-img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 .menu-badge-floating {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 8px;
+  left: 8px;
   background: var(--color-primary);
   color: #FFF;
   font-weight: 700;
-  font-size: 0.7rem;
-  padding: 3px 9px;
+  font-size: 0.68rem;
+  padding: 3px 8px;
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-sm);
 }
 .menu-tag-floating {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 8px;
+  right: 8px;
   background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   color: #FFF;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 600;
-  padding: 3px 9px;
+  padding: 2px 8px;
   border-radius: var(--radius-full);
 }
 .menu-item-title {
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 700;
+  line-height: 1.3;
 }
 .menu-rating-row {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   display: flex;
   align-items: center;
   gap: 5px;
 }
 .menu-desc {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   line-height: 1.45;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 .dietary-tags-row {
   display: flex;
@@ -919,26 +924,27 @@ a:hover {
   gap: 4px;
 }
 .dietary-pill {
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   font-weight: 600;
-  padding: 2px 7px;
+  padding: 2px 6px;
   background: var(--bg-muted);
   color: var(--text-muted);
   border-radius: var(--radius-full);
 }
 .menu-price-text {
-  font-size: 1.08rem;
+  font-size: 1.02rem;
   font-weight: 800;
   color: var(--color-primary);
 }
 .add-cart-btn {
   border-radius: var(--radius-full);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
+  padding: 5px 12px;
 }
 .qty-control-group .qty-btn {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   padding: 0;
   border-radius: 50%;
   display: inline-flex;
@@ -949,7 +955,7 @@ a:hover {
 
 /* --- SPACE & MEETING ROOM BOOKING SECTION --- */
 .booking-section {
-  padding: 65px 0;
+  padding: 55px 0;
   position: relative;
   z-index: 2;
 }
@@ -959,7 +965,7 @@ a:hover {
   -webkit-backdrop-filter: var(--glass-blur);
   border: var(--glass-border);
   border-radius: var(--radius-xl);
-  padding: 32px;
+  padding: 28px;
   box-shadow: var(--glass-shadow-lg);
 }
 .space-type-btn {
@@ -968,7 +974,7 @@ a:hover {
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border-radius: var(--radius-md);
-  padding: 14px;
+  padding: 12px;
   text-align: left;
   cursor: pointer;
   transition: var(--transition-smooth);
@@ -980,19 +986,19 @@ a:hover {
 }
 .space-type-btn h6 {
   font-weight: 700;
-  margin-bottom: 3px;
-  font-size: 0.95rem;
+  margin-bottom: 2px;
+  font-size: 0.9rem;
 }
 .space-type-btn p {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
   margin-bottom: 0;
 }
 .form-label-custom {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--text-main);
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 .form-control-custom, .form-select-custom {
   background: var(--glass-bg-elevated);
@@ -1000,9 +1006,9 @@ a:hover {
   -webkit-backdrop-filter: var(--glass-blur);
   border: var(--glass-border);
   border-radius: var(--radius-md);
-  padding: 9px 13px;
+  padding: 8px 12px;
   color: var(--text-main);
-  font-size: 0.86rem;
+  font-size: 0.84rem;
 }
 .form-control-custom:focus, .form-select-custom:focus {
   border-color: var(--color-primary);
@@ -1014,21 +1020,21 @@ a:hover {
   background: var(--bg-dark-section);
   color: #FFF;
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 22px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .booking-summary-box h5 {
   color: #FFF;
 }
 .booking-total-val {
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   font-weight: 800;
   color: var(--color-primary);
 }
 
 /* --- EVENT SHOWCASE (FESMO 2026 & WORKSHOPS) --- */
 .event-showcase-section {
-  padding: 65px 0;
+  padding: 55px 0;
   background: var(--bg-dark-section);
   color: #FFF;
   position: relative;
@@ -1045,7 +1051,7 @@ a:hover {
 }
 .event-banner-img {
   width: 100%;
-  height: 350px;
+  height: 320px;
   object-fit: cover;
   display: block;
 }
@@ -1053,7 +1059,7 @@ a:hover {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
-  padding: 26px;
+  padding: 22px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1061,7 +1067,7 @@ a:hover {
 
 /* --- REVIEWS SECTION --- */
 .reviews-section {
-  padding: 65px 0;
+  padding: 55px 0;
   position: relative;
   z-index: 2;
 }
@@ -1074,19 +1080,19 @@ a:hover {
   box-shadow: var(--glass-shadow-sm) !important;
 }
 .review-avatar {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: var(--color-primary);
 }
 .review-author {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 700;
 }
 .review-badge {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
 }
 .review-comment {
-  font-size: 0.83rem;
-  line-height: 1.5;
+  font-size: 0.81rem;
+  line-height: 1.48;
 }
 .owner-reply {
   background: var(--bg-muted);
@@ -1095,7 +1101,7 @@ a:hover {
 
 /* --- LOCATION & VISIT HUB --- */
 .location-section {
-  padding: 65px 0;
+  padding: 55px 0;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
@@ -1109,25 +1115,25 @@ a:hover {
   border: var(--glass-border);
   box-shadow: var(--glass-shadow-md);
   height: 100%;
-  min-height: 340px;
+  min-height: 300px;
 }
 .map-iframe {
   width: 100%;
   height: 100%;
-  min-height: 340px;
+  min-height: 300px;
   border: none;
 }
 .delivery-partner-badge {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 7px 13px;
+  gap: 6px;
+  padding: 6px 12px;
   background: var(--glass-bg-elevated);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border: var(--glass-border);
   border-radius: var(--radius-full);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--text-main);
   box-shadow: var(--glass-shadow-sm);
@@ -1141,7 +1147,7 @@ a:hover {
 
 /* --- FAQ ACCORDION --- */
 .faq-section {
-  padding: 50px 0 65px;
+  padding: 45px 0 55px;
   position: relative;
   z-index: 2;
 }
@@ -1151,18 +1157,18 @@ a:hover {
   -webkit-backdrop-filter: var(--glass-blur);
   border: var(--glass-border);
   border-radius: var(--radius-md);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   overflow: hidden;
   box-shadow: var(--glass-shadow-sm);
 }
 .faq-question {
-  padding: 16px 20px;
+  padding: 14px 18px;
   font-weight: 700;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   transition: var(--transition-smooth);
 }
 .faq-question:hover {
@@ -1172,13 +1178,13 @@ a:hover {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
-  padding: 0 20px;
+  padding: 0 18px;
   color: var(--text-muted);
-  font-size: 0.86rem;
+  font-size: 0.84rem;
 }
 .faq-item.open .faq-answer {
   max-height: 200px;
-  padding-bottom: 16px;
+  padding-bottom: 14px;
 }
 .faq-item.open .faq-question i {
   transform: rotate(180deg);
@@ -1191,7 +1197,7 @@ a:hover {
 .balcos-footer {
   background: var(--bg-dark-section);
   color: #FFF;
-  padding: 60px 0 28px;
+  padding: 50px 0 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
   z-index: 2;
@@ -1201,18 +1207,18 @@ a:hover {
 }
 .balcos-footer p, .balcos-footer li {
   color: #9CA3AF;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
 }
 .footer-social-icon {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   background: rgba(255, 255, 255, 0.08);
   color: #FFF;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 0.95rem;
   transition: var(--transition-smooth);
 }
 .footer-social-icon:hover {
@@ -1242,9 +1248,9 @@ a:hover {
   top: 0;
   right: -420px;
   width: 100%;
-  max-width: 390px;
+  max-width: 380px;
   height: 100%;
-  background: var(--glass-bg-elevated);
+  background: var(--glass-drawer);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border-left: var(--glass-border);
@@ -1258,45 +1264,44 @@ a:hover {
   right: 0;
 }
 .cart-drawer-header {
-  padding: 16px 18px;
+  padding: 14px 16px;
   border-bottom: var(--glass-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .cart-drawer-body {
-  padding: 18px;
+  padding: 16px;
   overflow-y: auto;
   flex: 1;
 }
 .cart-item-thumb {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   object-fit: cover;
 }
 .cart-drawer-footer {
-  padding: 18px;
+  padding: 16px;
   border-top: var(--glass-border);
   background: var(--glass-bg);
 }
 
-/* --- MOBILE BOTTOM DOCK (iOS Translucent Dock) --- */
+/* --- MINIMALIST APPLE iOS BOTTOM TAB BAR --- */
 .mobile-bottom-nav {
   display: none;
   position: fixed;
-  bottom: 12px;
-  left: 16px;
-  right: 16px;
-  background: var(--glass-bg-elevated);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--glass-drawer);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border: var(--glass-border);
-  border-radius: var(--radius-full);
-  box-shadow: var(--glass-shadow-lg);
+  border-top: var(--glass-border);
   z-index: 1040;
-  padding: 8px 14px;
+  padding: 6px 10px max(6px, env(safe-area-inset-bottom));
   justify-content: space-around;
   align-items: center;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
 }
 .mobile-nav-item {
   display: flex;
@@ -1306,9 +1311,13 @@ a:hover {
   font-weight: 600;
   color: var(--text-muted);
   gap: 2px;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
 }
 .mobile-nav-item i {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
+  line-height: 1;
 }
 .mobile-nav-item.active {
   color: var(--color-primary);
@@ -1317,13 +1326,13 @@ a:hover {
 /* Mobile Floating Cart Indicator */
 .mobile-cart-float {
   position: fixed;
-  bottom: 78px;
-  left: 16px;
-  right: 16px;
+  bottom: 66px;
+  left: 14px;
+  right: 14px;
   background: var(--color-primary);
   color: #FFF;
   border-radius: var(--radius-full);
-  padding: 10px 18px;
+  padding: 9px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1349,17 +1358,17 @@ a:hover {
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 14px;
 }
 .story-modal.active {
   display: flex;
 }
 .story-modal-card {
   width: 100%;
-  max-width: 420px;
-  height: 80vh;
-  max-height: 680px;
-  background: #161922;
+  max-width: 400px;
+  height: 78vh;
+  max-height: 640px;
+  background: #141720;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-xl);
   overflow: hidden;
@@ -1386,7 +1395,7 @@ a:hover {
 }
 .story-modal-header {
   position: absolute;
-  top: 20px;
+  top: 18px;
   left: 12px;
   right: 12px;
   display: flex;
@@ -1397,11 +1406,11 @@ a:hover {
 }
 .story-modal-body-img {
   width: 100%;
-  height: 58%;
+  height: 55%;
   object-fit: cover;
 }
 .story-modal-content {
-  padding: 18px;
+  padding: 16px;
   color: #FFF;
   flex: 1;
   display: flex;
@@ -1412,13 +1421,13 @@ a:hover {
 /* Toast Notification */
 .balcos-toast {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  bottom: 70px;
+  right: 16px;
   background: var(--text-main);
   color: var(--text-inverse);
-  padding: 10px 18px;
+  padding: 8px 16px;
   border-radius: var(--radius-full);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 600;
   z-index: 1090;
   box-shadow: var(--shadow-lg);
@@ -1433,117 +1442,106 @@ a:hover {
 }
 
 /* ==========================================================================
-   MOBILE RESPONSIVENESS & POLISHED CLEAN PROPORTIONS
+   MOBILE RESPONSIVENESS & PROPORTION TUNING
    ========================================================================== */
 @media (max-width: 991px) {
-  :root {
-    --nav-height: 64px;
-  }
   .hero-main-img {
-    height: 320px;
+    height: 300px;
   }
   .mobile-bottom-nav {
     display: flex;
   }
   body {
-    padding-bottom: 75px;
+    padding-bottom: 60px;
   }
 }
 
 @media (max-width: 576px) {
   :root {
-    --nav-height: 58px;
+    --nav-height: 56px;
   }
   
   .container {
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
-  /* Refined Hero on Mobile (No Zoomed / Cramped feel) */
+  /* Refined Hero on Mobile */
   .hero-section {
-    padding: 30px 0 40px;
+    padding: 24px 0 34px;
   }
   .hero-title {
-    font-size: 1.75rem;
+    font-size: 1.65rem;
     line-height: 1.2;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
   .hero-lead {
-    font-size: 0.92rem;
-    margin-bottom: 22px;
-    line-height: 1.55;
+    font-size: 0.88rem;
+    margin-bottom: 18px;
+    line-height: 1.5;
   }
   .hero-cta-group {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
   }
   .btn-primary-hero, .btn-secondary-hero {
     width: 100%;
     justify-content: center;
-    padding: 11px 18px;
-    font-size: 0.9rem;
-  }
-  .hero-media-card {
-    border-radius: var(--radius-lg);
+    padding: 10px 16px;
+    font-size: 0.88rem;
   }
   .hero-main-img {
-    height: 240px;
+    height: 220px;
   }
   .hero-floating-glass-card {
     position: static;
-    margin-top: 10px;
+    margin-top: 8px;
     border-radius: var(--radius-md);
-    padding: 12px 14px;
+    padding: 10px 12px;
   }
 
-  /* Spacing optimization on mobile */
+  /* Sections padding */
   .pillars-section, .menu-section, .booking-section, .reviews-section, .location-section {
-    padding: 42px 0;
+    padding: 36px 0;
   }
   .section-title {
-    font-size: 1.45rem;
-    margin-bottom: 8px;
+    font-size: 1.35rem;
+    margin-bottom: 6px;
   }
   .section-subtitle {
-    font-size: 0.85rem;
-    margin-bottom: 20px;
+    font-size: 0.82rem;
+    margin-bottom: 16px;
   }
 
-  /* Compact Card Layout on Phone */
+  /* Cards on Phone */
   .pillar-card {
-    padding: 18px;
+    padding: 16px;
   }
   .booking-card-main {
-    padding: 18px;
+    padding: 16px;
     border-radius: var(--radius-lg);
   }
   .booking-summary-box {
-    padding: 18px;
+    padding: 16px;
   }
   .menu-card-img-wrapper {
-    height: 145px;
+    height: 135px;
   }
   
-  /* Stories track spacing */
+  /* Stories track */
   .story-avatar-ring {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
   }
   .story-title-text {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
   }
 
   /* Event Banner */
   .event-banner-img {
-    height: 240px;
+    height: 220px;
   }
   .event-banner-overlay {
-    padding: 16px;
-  }
-
-  /* Modal */
-  .story-modal-card {
-    height: 85vh;
+    padding: 14px;
   }
 }
